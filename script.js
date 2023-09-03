@@ -1,143 +1,48 @@
-const item = document.querySelectorAll(".Item");
-const wrapper = document.querySelector(".sliderWrapper");
+let totalAmount = 0;
 
-const products = [
-{
-    id : 1,
-    title: "Air-Force",
-    price: 12000 ,
-    colors : [
-    {
-        code:"black",
-        img: "/images/air.png",
-    },
-    {
-        code:"blue",
-        img: "/images/air2.png",
-    },
-    ],
-},
-{
-    id : 2,
-    title: "Air-Jordan",
-    price: 18000 ,
-    colors : [
-    {
-        code:"gray",
-        img: "/images/jordan.png",
-    },
-    {
-        code:"green",
-        img: "/images/jordan2.png",
-    },
-    ],
-},
+function opencart() {
+    let overlay = document.getElementsByClassName('overlay')[0];
+    overlay.style.display = "flex";
+}
 
-{
-    id : 3,
-    title: "blazer",
-    price: 10000 ,
-    colors : [
-    {
-        code:"rgb(255, 221, 221)",
-        img: "/images/blazer.png",
-    },
-    {
-        code:"green",
-        img: "/images/blazer2.png",
-    },
-    ],
-},
+function closecart() {
+    let overlay = document.getElementsByClassName('overlay')[0];
+    overlay.style.display = "none";
+}
 
-{
-    id : 4,
-    title: "Crater",
-    price: 11000 ,
-    colors : [
-    {
-        code:"black",
-        img: "/images/crater.png",
-    },
-    {
-        code:"rgb(188, 255, 4)",
-        img: "/images/crater2.png",
-    },
-    ],
-},
+function addToCart(i) {
+  let details = document.querySelectorAll('.item')[i];
 
+  let itemName = details.querySelector('h4').textContent;
+  let itemPrice = details.querySelector('h3').textContent;
 
-{
-    id : 5,
-    title: "Hippie",
-    price: 15000 ,
-    colors : [
-    {
-        code:"pink",
-        img:  "/images/hippie.png",
-    },
-    {
-        code:"rgb(62, 56, 56)",
-        img: "/images/hippie2.png",
-    },
-    ],
-},
-];
+  let cartItems = document.querySelector('.cart_items');
 
-const productTitle = document.querySelector(".productTitle");
-const productPrice = document.querySelector(".productPrice");
-const productColor = document.querySelectorAll(".color");
-const productImg = document.querySelector(".productImg");
-const productSize = document.querySelectorAll(".size");
+  let newItem = document.createElement('div');
+  newItem.classList.add('order_item');
+  newItem.id = `order_id_${i}`;
+  newItem.innerHTML = `
+      <button type="button" class="remove_item" onclick="remove_item(${i})">&#x2715;</button>
+      <div class="item_info">
+        <div class="item_name">${itemName}</div>
+        <div class="item_price">${itemPrice}</div>
+      </div>
+  `;
 
+  cartItems.appendChild(newItem);
+  let price = parseFloat(itemPrice.replace('Rs ', '').replace(',', ''));
+  totalAmount += price;
+  
+  let total = document.querySelector('.cart_total');
+  total.textContent = `Total: Rs ${totalAmount.toFixed(2)}`;
+}
 
-let choosenProduct = products[0];
+function remove_item(i) {
+    let item = document.getElementById(`order_id_${i}`);
+    let price = parseFloat(item.querySelector('.item_price').textContent.replace('Rs ', '').replace(',', ''));
+    totalAmount -= price;
+    item.remove();
+    let total = document.querySelector('.cart_total');
+    total.textContent = `Total: Rs ${totalAmount.toFixed(2)}`;
+}
 
-
-item.forEach((items, index) => {
-    items.addEventListener("click", () => {
-        // choose slide
-        wrapper.style.transform = `translateX(${-100 * index}vw)`;
-
-        // get details of that slide
-        choosenProduct = products[index];
-
-        // change the slide name, color and price
-        productTitle.textContent = choosenProduct.title;
-        productPrice.textContent = "₹" +choosenProduct.price;
-        productImg.src = choosenProduct.colors[0].img;
-
-        productColor.forEach((color,index) => {
-            color.style.backgroundColor = choosenProduct.colors[index].code;
-        });
-    });
-});
-
-productColor.forEach((color, index) => {
-    color.addEventListener("click", ()=> {
-        productImg.src = choosenProduct.colors[index].img;
-    });
-});
-
-productSize.forEach((size, index) => {
-    size.addEventListener("click", ()=> {
-        productSize.forEach((size) => {
-            size.style.backgroundColor = "white";
-             size.style.color = "black";
-        });
-        size.style.backgroundColor = "black";
-        size.style.color = "white";
-    });
-    
-});
-
-const buyButton = document.querySelector(".productButton");
-const close = document.querySelector(".close");
-const payment = document.querySelector(".payment");
-
-buyButton.addEventListener("click", () => {
-    payment.style.display = "flex";
-});
-
-close.addEventListener("click", () => {
-    payment.style.display = "none";
-});

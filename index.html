@@ -2,12 +2,14 @@
 <html lang="en">
 
 <head>
-  <link rel="icon" href="https://th.bing.com/th/id/R.3ca957a349b3d10a8c58f9c705372869?rik=rjKMNk9Ogb55cA&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_62254.png&ehk=O%2fW4SjDbqQnmTgLlvC73367DXJYPcI91yPDdHVwMBD4%3d&risl=&pid=ImgRaw&r=0">
+  <link rel="icon"
+    href="https://th.bing.com/th/id/R.3ca957a349b3d10a8c58f9c705372869?rik=rjKMNk9Ogb55cA&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_62254.png&ehk=O%2fW4SjDbqQnmTgLlvC73367DXJYPcI91yPDdHVwMBD4%3d&risl=&pid=ImgRaw&r=0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link type="text/css" rel="stylesheet" href="style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>E-Commerce</title>
 </head>
 
@@ -44,8 +46,30 @@
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
       </div>
+      <div class="carticon" onclick="opencart()">
+        <i class="fa fa-shopping-cart" style="font-size:24px;color: white;
+      margin-left: 20px;
+      margin-right: 20px;
+      align-items: center;"></i>
+      </div>
     </div>
   </nav>
+  <div class="overlay" id="overlay">
+    <div class="cart">
+      <div class="cart_head">
+        <button class="close" type="button" onclick="closecart()">&#x2715;</button>
+        <h2>Your Cart</h2>
+        <h2></h2>
+      </div>
+      <hr>
+      <div class="cart_items" id="cartItems">
+      </div>
+      <div class="cart_total">
+        Total: Rs 0.00
+      </div>
+    </div>
+  </div>
+
   <section class="slider">
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
@@ -61,7 +85,8 @@
           <img src="Images/Samsung-Galaxy-S22-series.webp" class=" ad_h d-block " alt="Samsung Galaxy S24+ 5G">
           <div class="carousel-caption d-none d-md-block ad_block">
             <h5 class="ad_name">Samsung Galaxy S24+ 5G</h5>
-            <p class="ad_p">6.8-inch AMOLED display with a 120Hz refresh rate. It will be powered by the Snapdragon 8
+            <p class="ad_p">6.8-inch AMOLED display with a 120Hz refresh rate. It will be powered by the
+              Snapdragon 8
               Gen 3 chipset and will have up to 12GB of RAM and 256GB of storage</p>
           </div>
         </div>
@@ -102,51 +127,56 @@
         <a href="#">
           <img src="Images/Accessories/1.webp" class="img_acc" alt="Accessories">
           <div id="details">
-            <h3>Unisex Silver-Toned Series 3 Smart Watch</h3>
-            <h4>Apple</h4>
-            <h2>Rs 31999</h2>
+            <h4>Unisex Silver-Toned Series 3 Smart Watch</h4>
+            <h5>Apple</h5>
+            <h3>Rs 31999</h3>
           </div>
         </a>
+        <button class="add-to-cart-button" type="button" onclick="addToCart(0)">Add to Cart</button>
       </div>
       <div class="item">
         <a href="#">
           <img src="Images/Accessories/2.webp" class="img_acc" alt="Accessories">
           <div id="details">
-            <h3>Unisex Black & Green Reflex 2.0 Smart Band</h3>
-            <h4>Fastrack</h4>
-            <h2>Rs 1999</h2>
+            <h4>Unisex Black & Green Reflex 2.0 Smart Band</h4>
+            <h5>Fastrack</h5>
+            <h3>Rs 1999</h3>
           </div>
         </a>
+        <button class="add-to-cart-button" type="button" onclick="addToCart(1)">Add to Cart</button>
       </div>
       <div class="item">
         <a href="#">
           <img src="Images/Accessories/3.webp" class="img_acc" alt="Accessories">
           <div id="details">
-            <h3>Unisex Black Galaxy Fit Fitness Band</h3>
-            <h4>Samsung</h4>
-            <h2>Rs 9990</h2>
+            <h4>Unisex Black Galaxy Fit Fitness Band</h4>
+            <h5>Samsung</h5>
+            <h3>Rs 9990</h3>
           </div>
         </a>
+        <button class="add-to-cart-button" type="button" onclick="addToCart(2)">Add to Cart</button>
       </div>
       <div class="item">
         <a href="#">
           <img src="Images/Accessories/4.webp" class="img_acc" alt="Accessories">
           <div id="details">
-            <h3>Gear IconX Black Cord-free Fitness Earbuds</h3>
-            <h4>Samsung</h4>
-            <h2>Rs 13990</h2>
+            <h4>Gear IconX Black Cord-free Fitness Earbuds</h4>
+            <h5>Samsung</h5>
+            <h3>Rs 13990</h3>
           </div>
         </a>
+        <button class="add-to-cart-button" type="button" onclick="addToCart(3)">Add to Cart</button>
       </div>
       <div class="item">
         <a href="#">
           <img src="Images/Accessories/5.webp" class="img_acc" alt="Accessories">
           <div id="details">
-            <h3>White 2nd Gen AirPods with Charging Case</h3>
-            <h4>Apple</h4>
-            <h2>Rs 14999</h2>
+            <h4>White 2nd Gen AirPods with Charging Case</h4>
+            <h5>Apple</h5>
+            <h3>Rs 14999</h3>
           </div>
         </a>
+          <button class="add-to-cart-button" type="button" onclick="addToCart(4)">Add to Cart</button>
       </div>
     </div>
   </section>
@@ -160,58 +190,66 @@
         <a href="#">
           <img src="Images/Clothes/1.webp" class="img_acc" alt="Accessories">
           <div id="details">
-            <h3>Men Navy Blue Solid Sweatshirt</h3>
-            <h4>United Colors of Benetton</h4>
-            <h2>Rs 2599</h2>
+            <h4>Men Navy Blue Solid Sweatshirt</h4>
+            <h5>United Colors of Benetton</h5>
+            <h3>Rs 2599</h3>
           </div>
         </a>
+        <button class="add-to-cart-button" type="button" onclick="addToCart(5)">Add to Cart</button>
       </div>
       <div class="item">
         <a href="#">
           <img src="Images/Clothes/2.webp" class="img_acc" alt="Accessories">
           <div id="details">
-            <h3>Men Navy Blue Solid Sweatshirt</h3>
-            <h4>United Colors of Benetton</h4>
-            <h2>Rs 2599</h2>
+            <h4>Men Navy Blue Solid Sweatshirt</h4>
+            <h5>United Colors of Benetton</h5>
+            <h3>Rs 2599</h3>
           </div>
         </a>
+        <button class="add-to-cart-button" type="button" onclick="addToCart(6)">Add to Cart</button>
       </div>
       <div class="item">
         <a href="#">
           <img src="Images/Clothes/3.webp" class="img_acc" alt="Accessories">
           <div id="details">
-            <h3>Men Navy Blue Solid Sweatshirt</h3>
-            <h4>United Colors of Benetton</h4>
-            <h2>Rs 2599</h2>
+            <h4>Men Navy Blue Solid Sweatshirt</h4>
+            <h5>United Colors of Benetton</h5>
+            <h3>Rs 2599</h3>
           </div>
         </a>
+        <button class="add-to-cart-button" type="button" onclick="addToCart(7)">Add to Cart</button>
       </div>
       <div class="item">
         <a href="#">
           <img src="Images/Clothes/4.webp" class="img_acc" alt="Accessories">
           <div id="details">
-            <h3>Men Navy Blue Solid Sweatshirt</h3>
-            <h4>United Colors of Benetton</h4>
-            <h2>Rs 2599</h2>
+            <h4>Men Navy Blue Solid Sweatshirt</h4>
+            <h5>United Colors of Benetton</h5>
+            <h3>Rs 2599</h3>
           </div>
         </a>
+        <button class="add-to-cart-button" type="button" onclick="addToCart(8)">Add to Cart</button>
       </div>
       <div class="item">
         <a href="#">
           <img src="Images/Clothes/5.webp" class="img_acc" alt="Accessories">
           <div id="details">
-            <h3>Men Navy Blue Solid Sweatshirt</h3>
-            <h4>United Colors of Benetton</h4>
-            <h2>Rs 2599</h2>
+            <h4>Men Navy Blue Solid Sweatshirt</h4>
+            <h5>United Colors of Benetton</h5>
+            <h3>Rs 2599</h3>
           </div>
         </a>
+        <button class="add-to-cart-button" type="button" onclick="addToCart(9)">Add to Cart</button>
       </div>
     </div>
   </section>
   <footer class="footer">
+    <p>We apologize for any inconvenience, but we can only sell one item per order at this time due to limited
+      availability.</p>
     <p>&copy; 2023 E-Commerce | Made and designed solely by Anuj Garg</p>
   </footer>
 
+  <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
