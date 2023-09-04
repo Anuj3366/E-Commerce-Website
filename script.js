@@ -55,6 +55,7 @@ function addToCart(i) {
   totalAmount += itemPrice;
   saveCartToLocalStorage();
   updateCartDisplay();
+  opencart();
 }
 
 function remove_item(i) {
