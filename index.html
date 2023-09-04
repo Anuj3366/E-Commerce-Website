@@ -26,13 +26,13 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Limited Offers</a>
+            <a class="nav-link active" aria-current="page" href="#limitedoffer">Limited Offers</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Accessories</a>
+            <a class="nav-link active" aria-current="page" href="#accessories">Accessories</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Clothes</a>
+            <a class="nav-link active" aria-current="page" href="#clothes">Clothes</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Shoes</a>
@@ -54,6 +54,7 @@
       </div>
     </div>
   </nav>
+
   <div class="overlay" id="overlay">
     <div class="cart">
       <div class="cart_head">
@@ -67,10 +68,14 @@
       <div class="cart_total">
         Total: Rs 0.00
       </div>
+      <div class="checkout-button">
+        <a href="payment.html" target="_blank">Proceed to Payment</a>
+      </div>
     </div>
   </div>
 
-  <section class="slider">
+
+  <section class="slider" id="limitedoffer">
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -117,14 +122,14 @@
       </button>
     </div>
   </section>
-  <section class="accessories">
+  <section class="accessories" id="accessories">
     <br>
     <hr>
     <br>
     <h2 class="head">Accessories for Men and Women</h2>
     <div class="flex">
       <div class="item">
-        <a href="#">
+        <a href="./Product/product1.html">
           <img src="Images/Accessories/1.webp" class="img_acc" alt="Accessories">
           <div id="details">
             <h4>Unisex Silver-Toned Series 3 Smart Watch</h4>
@@ -176,11 +181,11 @@
             <h3>Rs 14999</h3>
           </div>
         </a>
-          <button class="add-to-cart-button" type="button" onclick="addToCart(4)">Add to Cart</button>
+        <button class="add-to-cart-button" type="button" onclick="addToCart(4)">Add to Cart</button>
       </div>
     </div>
   </section>
-  <section class="accessories">
+  <section class="accessories" id="clothes">
     <br>
     <hr>
     <br>

@@ -106,7 +106,7 @@ hr {
     text-align: center;
 }
 
-.cart_head{
+.cart_head {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -120,6 +120,7 @@ hr {
 .cart_items {
     margin-top: 20px;
 }
+
 .order_item {
     display: flex;
     justify-content: space-between;
@@ -154,7 +155,24 @@ hr {
     font-weight: bold;
 }
 
+.checkout-button {
+    text-align: center;
+    margin-top: 20px;
+}
 
+.checkout-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.checkout-button a:hover {
+    background-color: #0056b3;
+}
 
 
 
