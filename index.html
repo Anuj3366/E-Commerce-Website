@@ -1,3 +1,11 @@
+<?php
+// Set cache control headers to prevent caching
+header("Cache-Control: no-cache, no-store, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +21,7 @@
   <title>E-Commerce</title>
 </head>
 
-<body onload="checkForUpdate()">
+<body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
