@@ -14,18 +14,17 @@
 - [Acknowledgments](#acknowledgments)
 
 ## About
-The E-Commerce Website is a dynamic online shopping platform designed to provide users with a seamless shopping experience. It offers a wide range of products, secure payment options, and user-friendly navigation. This repository contains the source code for the E-Commerce Website.
+The E-Commerce Website is a dynamic online shopping platform designed to provide users with a seamless shopping experience. It offers a diverse range of products and allows users to add items to their shopping cart. This repository contains the source code for the E-Commerce Website.
 
 ## Features
 - Product Catalog: Browse and search through a diverse range of products.
-- User Accounts: Create and manage user accounts for a personalized shopping experience.
-- Shopping Cart: Add and remove items from your cart and proceed to checkout.
-- Secure Payments: Securely complete your purchases with multiple payment options.
-- Admin Panel: Manage product listings, user accounts, and orders with ease.
+- Shopping Cart: Add and remove items from your cart.
+- User-Friendly Interface: An intuitive and user-friendly interface for an enjoyable shopping experience.
+- Local Storage: Products and cart items are stored in local storage, simulating a shopping cart.
+- Easy Checkout: A simplified checkout process for a seamless shopping experience.
 
 ## Getting Started
 ### Prerequisites
-- Web server (e.g., Apache) with PHP and MySQL support.
 - Web browser to access the website.
 
 ### Installation
@@ -35,20 +34,12 @@ The E-Commerce Website is a dynamic online shopping platform designed to provide
    git clone https://github.com/Anuj3366/E-Commerce-Website.git
    ```
 
-2. Import the provided SQL database schema into your MySQL server.
-
-3. Configure the database connection settings in `config.php`.
-
-4. Upload the project files to your web server.
-
 ## Usage
 1. Open the E-Commerce Website in your web browser.
 
 2. Browse the product catalogue, search for items, and add them to your shopping cart.
 
-3. Create or log in to your user account to manage your profile and track orders.
-
-4. Proceed to checkout, select a payment method, and complete your purchase.
+3. Proceed to checkout, review your cart, and finalize your order.
 
 ## License
 This project was made and designed by Anuj Garg, and he holds all the rights to it.
