@@ -72,4 +72,50 @@ function initializeCart() {
   updateCartDisplay();
 }
 
+// function clearCart() {
+//   for(int i = 0; i < 9; i++){
+//   let price = cart[i].price;
+//   totalAmount -= price;
+//   cart.splice(i, 1);
+//   saveCartToLocalStorage();
+//   updateCartDisplay();
+//   }
+// }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const searchInput = document.getElementById("search-input");
+  const searchButton = document.getElementById("search-button");
+
+  function handleSearch() {
+      const searchText = searchInput.value.trim().toLowerCase();
+      searchPage(searchText);
+  }
+
+  searchButton.addEventListener("click", handleSearch);
+
+  searchInput.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+          handleSearch();
+          event.preventDefault();
+      }
+  });
+
+  function searchPage(searchText) {
+      const allTextElements = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6, span, div");
+
+      allTextElements.forEach(function (element) {
+          const elementText = element.textContent.toLowerCase();
+          if (elementText.includes(searchText)) {
+              element.scrollIntoView({ behavior: "smooth", block: "center" });
+              element.classList.add("highlight");
+          } else {
+              element.classList.remove("highlight");
+          }
+      });
+  }
+});
+
+
+
+
 window.onload = initializeCart;

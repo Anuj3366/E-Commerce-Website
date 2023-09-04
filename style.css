@@ -1,3 +1,7 @@
+*{
+    scroll-behavior: smooth;
+}
+
 .navbar {
     background-color: #6e20ff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -70,7 +74,6 @@ hr {
     border: 1px solid #6e20ff;
     box-shadow: 1px 1px 1px black;
 }
-
 
 .carticon {
     cursor: pointer;
