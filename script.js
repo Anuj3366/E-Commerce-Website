@@ -1,9 +1,9 @@
-const connection = mysql.createConnection({
-    host: 'sql12.freesqldatabase.com',
-    user: 'sql12644271',
-    password: 'ete29dLQPY',
-    database: 'sql12644271'
-});
+// const connection = mysql.createConnection({
+//     host: 'sql12.freesqldatabase.com',
+//     user: 'sql12644271',
+//     password: 'ete29dLQPY',
+//     database: 'sql12644271'
+// });
 
 
 function opencart() {
