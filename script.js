@@ -1,63 +1,9 @@
-const mysql = require('mysql2');
-const express = require('express');
-const bodyParser = require('body-parser');
-
-const app = express();
-
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
 const connection = mysql.createConnection({
     host: 'sql12.freesqldatabase.com',
     user: 'sql12644271',
     password: 'ete29dLQPY',
     database: 'sql12644271'
 });
-
-connection.connect((err) => {
-    if (err) {
-        console.error('Error connecting to MySQL:', err);
-    } else {
-        console.log('Connected to MySQL');
-    }
-});
-
-app.use(express.static('public'));
-
-// API route to retrieve product data from the database
-app.get('/api/products', (req, res) => {
-    // Implement code to fetch product data from MySQL
-    // Send the data as a JSON response
-});
-
-// API route for user registration
-app.post('/api/register', (req, res) => {
-    const { username, email, password } = req.body;
-    
-    // Implement code to insert user data into the 'users' table in MySQL
-    // Respond with success or error status
-});
-
-// API route for adding an item to the cart
-app.post('/api/add-to-cart', (req, res) => {
-    const { itemId } = req.body;
-    
-    // Implement code to add an item to the user's cart in MySQL
-    // Respond with success or error status
-});
-
-// API route for clearing the cart
-app.post('/api/clear-cart', (req, res) => {
-    const { userId } = req.body;
-    
-    // Implement code to clear the user's cart in MySQL
-    // Respond with success or error status
-});
-
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
-});
-
 
 
 function opencart() {
