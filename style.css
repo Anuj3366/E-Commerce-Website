@@ -75,6 +75,18 @@ hr {
     box-shadow: 1px 1px 1px black;
 }
 
+.login a{
+    color:white;
+    text-decoration:none;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+}
+.login a:hover{
+    color:white;
+    text-shadow: 0px 0px 6px white;
+    text-decoration:underline;
+}
+
 .carticon {
     cursor: pointer;
     transform: scale(1.1);
